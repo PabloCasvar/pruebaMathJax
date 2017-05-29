@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>MathJax TeX Test Page</title>
+
+<!-- Copyright (c) 2010-2017 The MathJax Consortium -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    
+
+  });
+
+</script>
+
+<script type="text/javascript" src="MathJax-master/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+
+
+</head>
+
+<body style="max-width: 1000px;">
+
+
+
+<p>
+
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+
+\begin{equation}
+X(f) = \int_{-\infty}^{\infty} x(t) e^{-j2\pi ft} dt
+\end{equation}
+o bien, siendo $\omega = 2\pi f$ 
+
+\begin{equation}\label{eq:fourierOmega}
+X(\omega) = \int_{-\infty}^{\infty} x(t) e^{-j\omega t} dt
+\end{equation}
+
+haciendo uso de la ecuación de Euler 
+
+$$e^{ \pm i\theta } = \cos \theta \pm i\sin \theta$$
+
+La ecuación \eqref{eq:fourierOmega} puede separarse como sigue
+
+\begin{equation}
+X(\omega) = \int_{-\infty}^{\infty} x(t) cos(\omega t) dt -j \int_{-\infty}^{\infty} x(t) sin(\omega t) dt
+\end{equation}
+
+
+
+
+The \verb|equation| environment creates numbered formulas you can
+label and refer to elsewhere:
+%  this commented blank line prevents start of a new paragraph
+\begin{equation}\label{eq:pythagoras}
+a^2 + b^2 = c^2 .
+\end{equation}
+%  this commented blank line prevents start of a new paragraph
+Equation~\ref{eq:pythagoras} is the heart of the Pythagorean theorem.
+
+Use the \verb|\eqref| macro to put parentheses around equation
+references: \eqref{eq:pythagoras}.
+
+For equations with no numbers, use \verb|equation*|:
+%
+\begin{equation*}
+2 + 2 = 4 .
+\end{equation*}
+
+For multiline formulas, use \verb|align| or \verb|align*|:
+%
+\begin{align}
+e^{i\pi} & = \cos(\pi) + i\sin(\pi) \notag \\
+         & = -1 .
+\end{align}
+
+\end{document}
+
+</p>
+
+
+
+</body>
+
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="MathJax-master/MathJax.js"></script>
+
+   <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    
+    <script type="text/javascript" async
+        src="https://example.com/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+
+    <script type="text/javascript" async src="MathJax-master/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+
+    <title>Document</title>
+
+</head>
+<body>
+    
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+    
+</body>
+</html>-->
