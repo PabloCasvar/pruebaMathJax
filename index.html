@@ -55,6 +55,8 @@ X(f) = \int_{-\infty}^{\infty} x(t) e^{-j2\pi ft} dt
 \end{equation}
 o bien, siendo $\omega = 2\pi f$ 
 
+<h1>Transformada de Fourier</h1>
+
 \begin{equation}\label{eq:fourierOmega}
 X(\omega) = \int_{-\infty}^{\infty} x(t) e^{-j\omega t} dt
 \end{equation}
@@ -69,7 +71,23 @@ La ecuación \eqref{eq:fourierOmega} puede separarse como sigue
 X(\omega) = \int_{-\infty}^{\infty} x(t) cos(\omega t) dt -j \int_{-\infty}^{\infty} x(t) sin(\omega t) dt
 \end{equation}
 
+<h1>Transformada de Laplace</h1>
 
+\begin{equation}
+X(s) = \int_{-\infty}^{\infty} x(t) e^{-st} dt 
+\end{equation}
+
+al ser $s\in \mathbb{C}$ puede expresarse como $s = \sigma + j\omega$ con esto se tiene
+
+\begin{equation}
+X(s) = \int_{-\infty}^{\infty} x(t) e^{-(\sigma + j\omega)t} dt = \int_{-\infty}^{\infty} x(t) e^{-\sigma t} e^{-j\omega t} dt  
+\end{equation}
+
+De esta manera se puede entender a la Transformada de Laplace como la transformada de Fourier de la función $x(t) e^{-\sigma t}$
+
+\begin{equation}
+X(s)= \int_{-\infty}^{\infty} [x(t) e^{-\sigma t}] e^{-j\omega t} dt
+\end{equation}
 
 
 The \verb|equation| environment creates numbered formulas you can
@@ -94,7 +112,7 @@ For multiline formulas, use \verb|align| or \verb|align*|:
 %
 \begin{align}
 e^{i\pi} & = \cos(\pi) + i\sin(\pi) \notag \\
-         & = -1 .
+         & = -1 
 \end{align}
 
 \end{document}
