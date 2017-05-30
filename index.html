@@ -1,50 +1,76 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <title>MathJax TeX Test Page</title>
-
 <!-- Copyright (c) 2010-2017 The MathJax Consortium -->
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
 <script type="text/x-mathjax-config">
-
   MathJax.Hub.Config({
-
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
     TeX: { equationNumbers: { autoNumber: "AMS" } }
-    
-
   });
-
 </script>
 
 <!--for local library files-->
 <!--<script type="text/javascript" src="MathJax-master/MathJax.js?config=TeX-AMS_HTML-full"></script>-->
-
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-
-
-
 </head>
 
 <body style="max-width: 1000px;">
-
-
-
 <p>
+
+<h1>Transformada Real Discreta de Fourier</h1>
+
+La señal de entrada $x[i]$ de longitud $N$ con $i=0, 1, ... , N-1$, contiene la señal a descomponer, mientras que las señales $ReX[k]$ y $ImX[k]$ con $k= 0, ... , N/2$ contienen las amplitudes de los componentes coseno y seno escalados respectivamente.
+
+<br><br>Una señal de longitud $N$ genera $N+2$ señales sinusoidales
+
+<br><br> Las señales base están dadas por
+
+\begin{equation}
+c_k[i]= cos\left( \frac{2\pi ki}{N}\right)
+\end{equation}
+
+\begin{equation}
+s_k[i]= sin\left( \frac{2\pi ki}{N}\right)
+\end{equation}
+
+$c_k[i]$ y $s_k[i]$ son las señales coseno y seno, cada una con una longitud de $N$ puntos. El parámetro $i$ corre desde $0$ hasta $N-1$
+<br>El parámetro $k$ determina la frecuencia de la señal, asignándosele los valores $k= 0, 1, ... , N/2$
+<br><br> El parámetro de frecuencia $k$ es igual al número de ciclos completos que ocurren a lo largo de $N$ puntos de la señal, esto es:
+
+\begin{align*}
+c_1[ ] & \longrightarrow \text{Un ciclo completo en $N$ puntos} \\
+c_2[ ] & \longrightarrow \text{Dos ciclos completos en $N$ puntos}
+\end{align*}
+
+Con esto se definen las señales $ReX[k]$ y $ImX[k]$ como sigue
+
+\begin{equation}
+ReX[k]= \sum_{i=0}^{N-1}x[i]cos\left( \frac{2\pi ki}{N}\right)
+\end{equation}
+
+\begin{equation}
+ImX[k]= \sum_{i=0}^{N-1}x[i]sin\left( \frac{2\pi ki}{N}\right)
+\end{equation}
+
+Con $k = 0, 1, ... , N/2$
+
+<br><br>Una manera de analizar las ecuaciones anteriores es viendo a las funciones involucradas en el producto
+como vectores, en cuyo caso se estaría calculando el producto punto entre ambos, obteniendo la similitud entre ambas señales.
+
+<br><br>Dos de los $N/2 + 1$ valores de la función $ImX[k]$ no contienen información alguna, pues siempre serán iguales a cero, estos son 
+
+\begin{align*}
+ImX[0] = \sum_{i=0}^{N-1}x[i]sin\left( \frac{2\pi i\cdot 0}{N}\right) = \sum_{i=0}^{N-1}x[i]sin(0) = 0 \\ \\
+ImX\left[\frac{N}{2}\right] = \sum_{i=0}^{N-1}x[i]sin\left( \frac{2\pi i}{N}\cdot \frac{N}{2}\right) = \sum_{i=0}^{N-1}x[i]sin(2\pi i) = 0 
+\end{align*}
+
 
 <h1>Transformada de Fourier</h1>
 
@@ -85,7 +111,7 @@ De esta manera se puede entender a la Transformada de Laplace como la transforma
 X(s)= \int_{-\infty}^{\infty} [x(t) e^{-\sigma t}] e^{-j\omega t} dt
 \end{equation}
 
-<h1>Transformada discreta de Furier</h1>
+<h1>Transformada Compleja Discreta de Fourier</h1>
 
 Sea $N$ el número total de muestras, $f_s$ la frecuencia de muestreo y $T_s$ el periodo de muestreo, se sabe que:
 
@@ -93,87 +119,26 @@ Sea $N$ el número total de muestras, $f_s$ la frecuencia de muestreo y $T_s$ el
 T_s = \frac{1}{f_s}
 \end{equation*}
 
-Con esto la Transformada Discreta de Fourier se define como:
+La Transformada Discreta de Fourier de una función $x[kT_s]$ se define como:
 
-\begin{equation}
+\begin{equation}\label{eq:CDFT}
 F \left( \frac{n}{N} f_s \right) = \frac{1}{N}\sum_{k=0}^{N-1} x[kT_s] e^{-j \frac{2\pi nk}{N}}
 \end{equation}
 
 Con $n = 0, 1, ..., N-1.$  </br></br>
 
+Con esto, la resolución en frecuencia $\Delta f$ está dada por:
 
-
-The \verb|equation| environment creates numbered formulas you can
-label and refer to elsewhere:
-%  this commented blank line prevents start of a new paragraph
-\begin{equation}\label{eq:pythagoras}
-a^2 + b^2 = c^2 .
+\begin{equation}
+\Delta f = \frac{f_s}{N}
 \end{equation}
-%  this commented blank line prevents start of a new paragraph
-Equation~\ref{eq:pythagoras} is the heart of the Pythagorean theorem.
 
-Use the \verb|\eqref| macro to put parentheses around equation
-references: \eqref{eq:pythagoras}.
+El valor de $n$ actúa de índice para obtener los distintos valores de frecuencia
 
-For equations with no numbers, use \verb|equation*|:
-%
-\begin{equation*}
-2 + 2 = 4 .
-\end{equation*}
-
-For multiline formulas, use \verb|align| or \verb|align*|:
-%
-\begin{align}
-e^{i\pi} & = \cos(\pi) + j\sin(\pi) \notag \\
-         & = -1 
-\end{align}
-
-\end{document}
-
-When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
-
-
+\begin{equation}
+F \left( \frac{0}{N}f_s\right), F \left( \frac{1}{N}f_s\right), ... , F \left( \frac{N-1}{N}f_s\right) 
+\end{equation} 
 </p>
 
-
-
 </body>
-
 </html>
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="MathJax-master/MathJax.js"></script>
-
-   <script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    </script>
-    
-    <script type="text/javascript" async
-        src="https://example.com/MathJax.js?config=TeX-AMS_CHTML">
-    </script>
-
-    <script type="text/javascript" async src="MathJax-master/MathJax.js?config=TeX-AMS_CHTML"></script>
-
-
-
-    <title>Document</title>
-
-</head>
-<body>
-    
-When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-    
-</body>
-</html>-->
