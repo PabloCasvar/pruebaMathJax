@@ -46,16 +46,12 @@
 
 <p>
 
-When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+<h1>Transformada de Fourier</h1>
 
 \begin{equation}
 X(f) = \int_{-\infty}^{\infty} x(t) e^{-j2\pi ft} dt
 \end{equation}
 o bien, siendo $\omega = 2\pi f$ 
-
-<h1>Transformada de Fourier</h1>
 
 \begin{equation}\label{eq:fourierOmega}
 X(\omega) = \int_{-\infty}^{\infty} x(t) e^{-j\omega t} dt
@@ -63,7 +59,7 @@ X(\omega) = \int_{-\infty}^{\infty} x(t) e^{-j\omega t} dt
 
 haciendo uso de la ecuación de Euler 
 
-$$e^{ \pm i\theta } = \cos \theta \pm i\sin \theta$$
+$$e^{ \pm i\theta } = \cos \theta \pm j\sin \theta$$
 
 La ecuación \eqref{eq:fourierOmega} puede separarse como sigue
 
@@ -89,6 +85,23 @@ De esta manera se puede entender a la Transformada de Laplace como la transforma
 X(s)= \int_{-\infty}^{\infty} [x(t) e^{-\sigma t}] e^{-j\omega t} dt
 \end{equation}
 
+<h1>Transformada discreta de Furier</h1>
+
+Sea $N$ el número total de muestras, $f_s$ la frecuencia de muestreo y $T_s$ el periodo de muestreo, se sabe que:
+
+\begin{equation*}
+T_s = \frac{1}{f_s}
+\end{equation*}
+
+Con esto la Transformada Discreta de Fourier se define como:
+
+\begin{equation}
+F \left( \frac{n}{N} f_s \right) = \frac{1}{N}\sum_{k=0}^{N-1} x[kT_s] e^{-j \frac{2\pi nk}{N}}
+\end{equation}
+
+Con $n = 0, 1, ..., N-1.$  </br></br>
+
+
 
 The \verb|equation| environment creates numbered formulas you can
 label and refer to elsewhere:
@@ -111,11 +124,16 @@ For equations with no numbers, use \verb|equation*|:
 For multiline formulas, use \verb|align| or \verb|align*|:
 %
 \begin{align}
-e^{i\pi} & = \cos(\pi) + i\sin(\pi) \notag \\
+e^{i\pi} & = \cos(\pi) + j\sin(\pi) \notag \\
          & = -1 
 \end{align}
 
 \end{document}
+
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+
 
 </p>
 
