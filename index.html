@@ -24,9 +24,37 @@
 <body style="max-width: 1000px;">
 <p>
 
+<h1>Convolución</h1>
+
+Se define la convolución entre dos funciones $x[n]$ y $y[n]$ como
+
+\begin{equation}
+x[n]*y[n] = \sum_{i=-\infty}^{+\infty} x[i]y[i-n]
+\end{equation}
+
 <h1>Respuesta al impulso</h1>
 
-Sea $\delta[n]$ la función impulso unitario y $h[n]$ la respuesta al impulso de un sistema Lineal Invariante en el Tiempo (LTI), se puede expresar la señal discreta $x[n]$ 
+Sea $\delta[n]$ la función impulso unitario y $x[n]$ una señal discreta expresada como
+
+\begin{equation*}
+x[n] = ... + x[-1]\delta [n+1] + x[0]\delta [n] + x[1]\delta [n-1] + x[-2]\delta [n+2] + ...
+\end{equation*}
+
+\begin{equation}
+x[n] = \sum_{i = -\infty}^{+\infty} x[i]\delta [n-i]
+\end{equation} 
+
+Al hacer pasar la señal $x[n]$ a través de un Sistema Lineal Invariante en el Tiempo (LTI) con respuesta al impulso $h[n]$ se obtiene la señal $y[n]$
+
+\begin{equation*}
+y[n] = ... + x[-1]h[n+1] + x[0]h[n] + x[1]h[n-1] + x[-2]h[n+2] + ...
+\end{equation*}
+
+\begin{equation}
+y[n] = \sum_{i = -\infty}^{+\infty} x[i]h[n-i] = x[n]*h[n]
+\end{equation}
+
+De esta manera, si se conoce la respuesta al impulso de un sistema LTI, se conoce la señal de salida a cualquier señal de entrada.
 
 <h1>Transformada Real Discreta de Fourier</h1>
 
