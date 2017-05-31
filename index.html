@@ -99,9 +99,36 @@ como vectores, en cuyo caso se estaría calculando el producto punto entre ambos
 <br><br>Dos de los $N/2 + 1$ valores de la función $ImX[k]$ no contienen información alguna, pues siempre serán iguales a cero, estos son 
 
 \begin{align*}
-ImX[0] = \sum_{i=0}^{N-1}x[i]sin\left( \frac{2\pi i\cdot 0}{N}\right) = \sum_{i=0}^{N-1}x[i]sin(0) = 0 \\ \\
-ImX\left[\frac{N}{2}\right] = \sum_{i=0}^{N-1}x[i]sin\left( \frac{2\pi i}{N}\cdot \frac{N}{2}\right) = \sum_{i=0}^{N-1}x[i]sin(2\pi i) = 0 
+ImX[0] = \sum_{i=0}^{N-1}x[i]sin\left( \frac{2\pi i}{N}\cdot 0\right) = \sum_{i=0}^{N-1}x[i]sin(0) = 0 \\ \\
+ImX\left[\frac{N}{2}\right] = \sum_{i=0}^{N-1}x[i]sin\left( \frac{2\pi i}{N}\cdot \frac{N}{2}\right) = \sum_{i=0}^{N-1}x[i]sin(\pi i) = 0 
 \end{align*}
+
+Para sintetizar la señal original $x[i]$ la siguiente ecuación es usada
+
+\begin{equation}
+x[i] = \sum_{k=0}^{N/2}Re\bar{X}[k]cos\left( \frac{2\pi ki}{N}\right) + \sum_{k=0}^{N/2}Im\bar{X}[k]sin\left( \frac{2\pi ki}{N}\right) 
+\end{equation}
+
+En donde las funciones $Re\bar{X}[k]$ y $Im\bar{X}[k]$ son las versiones normalizadas dadas por
+
+\begin{equation}
+Re\bar{X}[k] = \frac{2}{N}\cdot ReX[k] 
+\end{equation}
+
+\begin{equation}
+Im\bar{X}[k] = \frac{2}{N}\cdot ImX[k] 
+\end{equation}
+
+Excepto por dos casos especiales:
+
+\begin{equation}
+Re\bar{X}[0] = \frac{1}{N}\cdot ReX[0] 
+\end{equation}
+
+\begin{equation}
+Re\bar{X}[N/2] = \frac{1}{N}\cdot ReX[N/2] 
+\end{equation}
+
 
 <h1>Transformada de Fourier</h1>
 
