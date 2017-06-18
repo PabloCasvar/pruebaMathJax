@@ -198,5 +198,46 @@ F \left( \frac{0}{N}f_s\right), F \left( \frac{1}{N}f_s\right), ... , F \left( \
 \end{equation} 
 </p>
 
+<h1>Transformada Z</h1>
+
+<p>La relación matemática entre los coeficientes de recursión y la 
+  respuesta del filtro está dada por una técnica matemática llamada 
+  la Transformada $Z$ definida como: 
+
+\begin{equation}
+\sum_{n=-\infty }^{+\infty } x[n] z^{-n}
+\end{equation}
+
+donde la variable $z$ suele expresarse como $z=re^{-j\omega }$, en el caso del plano $z$ se generan 
+círculos concéntricos donde cada punto puede encontrarse a una distancia $r$ del origen y un ángulo 
+$\omega$, es decir se hace uso de coordenadas polares.
+
+En este caso un sistema discreto es inestable cuando los polos se encuentran fuera del círculo unidad 
+en el plano $z$. Cuando una señal es completamente real, la parte superior e inferior del plano $z$ son 
+imágenes exactas una de la otra.
+
+Una observación importante es que un sinusoide continuo puede tener una frecuencia entre $DC$ e infinito, 
+esto quiere decir que en el plano $s$ (de la Transformada de Fourier) permite que $\omega $ vaya desde menos 
+infinito hasta mas infinito. En comparación un sinusoide discreto solo puede tener una frecuencia entre DC 
+y la mitad de la frecuencia de muestreo, esto concuerda con la geometría del plano $z$ cuando se intrepreta 
+a la variable $\omega $ como un ángulo expresado en radianes, es decir ñas frecuencias positivas corresponden 
+a ángulos de $0$ a $\pi$ radianes, mientras quelas precuencias negativas corresponden a $0$ a $-\pi$ radianes
+
+</p>
+
+<h2>Filtros recursivos</h2>
+
+<p>Un filtro recursivo se describe a partir de la ecuación de diferencias:
+
+\begin{equation*}
+y[n] = a_0x[n] + a_1x[n-1] + a_2x[n-2] + ... + b_1y[n-1] + b_2y[n-2] + ...
+\end{equation*}
+
+Donde $x[]$ y $y[]$ son las señales de entrada y salida respectivamente 
+y los términos "$a$" y "$b$" son los coeficientes de recursión. 
+
+</p>
+
+
 </body>
 </html>
