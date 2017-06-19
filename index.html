@@ -229,12 +229,47 @@ a ángulos de $0$ a $\pi$ radianes, mientras quelas precuencias negativas corres
 
 <p>Un filtro recursivo se describe a partir de la ecuación de diferencias:
 
-\begin{equation*}
-y[n] = a_0x[n] + a_1x[n-1] + a_2x[n-2] + ... + b_1y[n-1] + b_2y[n-2] + ...
-\end{equation*}
+\begin{equation}
+\sum_{l=0}^{N} a_l^* y[n-l] = \sum_{k=0}^{M} b_k x[n-k] 
+\end{equation}
 
-Donde $x[]$ y $y[]$ son las señales de entrada y salida respectivamente 
-y los términos "$a$" y "$b$" son los coeficientes de recursión. 
+Donde $x[\ ]$ y $y[\ ]$ son las señales de entrada y salida respectivamente 
+y los términos "$a$" y "$b$" son los coeficientes de recursión. La ecuación 
+anterior puede expresarse como
+
+\begin{equation}
+y[n] =\sum_{l=1}^{N} a_l y[n-l] + \sum_{k=0}^{M} b_k x[n-k] 
+\end{equation}
+
+Donde se asume $a_0 = 1$
+
+</p>
+
+<h2>Región de convergencia</h2>
+
+
+<p>
+Las siguientes igualdades son de utilidad para encontrar la región de convergencia ($ROC$) de 
+la Transformada $z$
+
+\begin{equation}
+\sum_{n=N_1 }^{N_2 } a^n = \frac{a^{N_1}-a^{N_{2+1}}}{1-a},  \ \ \ \  for \ \ \  a \neq 1
+\end{equation}
+
+\begin{equation}
+\sum_{n=N_1 }^{\infty } a^n = \frac{a^{N_1}}{1-a}, \ \ \ \  for \ \ \  |a| <  1
+\end{equation}
+
+Por ejemplo, sea la secuencia $x[n] = a^n$, para $n\geq 0$, donde $a$ es una constante compleja, para determinar $X(z)$, 
+consideramos la suma: 
+
+\begin{align*}
+X(z) &=\sum^{\infty }_{n=0} a^nz^{-n} \\ \\
+     &=\sum^{\infty }_{n=0} \left( \frac{a}{z} \right) ^{n} \\ \\
+     &=\frac{1}{1- \left( \frac{a}{z} \right)}, \ \ \ \left| \frac{a}{z} \right| < 1 \\ \\
+     &=\frac{z}{z-a}, \ \ \ |z| > |a|
+\end{align*}
+
 
 </p>
 
