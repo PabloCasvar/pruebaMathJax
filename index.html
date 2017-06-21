@@ -225,28 +225,7 @@ a ángulos de $0$ a $\pi$ radianes, mientras quelas precuencias negativas corres
 
 </p>
 
-<h2>Filtros recursivos</h2>
-
-<p>Un filtro recursivo se describe a partir de la ecuación de diferencias:
-
-\begin{equation}
-\sum_{l=0}^{N} a_l^* y[n-l] = \sum_{k=0}^{M} b_k x[n-k] 
-\end{equation}
-
-Donde $x[\ ]$ y $y[\ ]$ son las señales de entrada y salida respectivamente 
-y los términos "$a$" y "$b$" son los coeficientes de recursión. La ecuación 
-anterior puede expresarse como
-
-\begin{equation}
-y[n] =\sum_{l=1}^{N} a_l y[n-l] + \sum_{k=0}^{M} b_k x[n-k] 
-\end{equation}
-
-Donde se asume $a_0 = 1$
-
-</p>
-
 <h2>Región de convergencia</h2>
-
 
 <p>
 Las siguientes igualdades son de utilidad para encontrar la región de convergencia ($ROC$) de 
@@ -269,6 +248,54 @@ X(z) &=\sum^{\infty }_{n=0} a^nz^{-n} \\ \\
      &=\frac{1}{1- \left( \frac{a}{z} \right)}, \ \ \ \left| \frac{a}{z} \right| < 1 \\ \\
      &=\frac{z}{z-a}, \ \ \ |z| > |a|
 \end{align*}
+
+</p>
+
+<h2>Filtros recursivos</h2>
+
+<p>Un filtro recursivo se describe a partir de la ecuación de diferencias:
+
+\begin{equation}\label{eq:generalSummation}
+\sum_{l=0}^{N} b_l^* y[n-l] = \sum_{k=0}^{M} a_k x[n-k] 
+\end{equation}
+
+Donde $x[\ ]$ y $y[\ ]$ son las señales de entrada y salida respectivamente 
+y los términos "$a$" y "$b$" son los coeficientes de recursión. La ecuación 
+anterior puede expresarse como
+
+\begin{equation}
+y[n] =\sum_{l=1}^{N} b_l y[n-l] + \sum_{k=0}^{M} a_k x[n-k] 
+\end{equation}
+
+Donde se asume $b_0 = 1$. Desarrollando las sumatorias anteriores se puede escribir:
+
+\begin{equation}
+y[n] = a_0x[n] + a_1x[n-1] + a_2x[n-2] + ... + b_1y[n-1]+ b_2y[n-2] + ... 
+\end{equation}
+
+Tomando la Transformada $z$ de ambos lados
+
+\begin{equation}
+Y[z] = a_0X[z] + a_1z^{-1}X[z] + a_2z^{-2}X[z] + ... + b_1z^{-1}Y[z]+ b_2z^{-2}Y[z] + ... 
+\end{equation}
+
+Agrupando términos semejantes y despejando para obtener la expresión $Y[z]/X[z]$
+
+\begin{equation}\label{eq:transferFunctionZ}
+\frac{Y[z]}{X[z]}=\frac{a_0 + a_1z^{-1} + a_2z^{-2}+...}{1-b_1z^{-1}-b_2z^{-2}-b_2z^{-2}-...}
+\end{equation}
+
+Al término $H[z]=Y[z]/X[z]$ se le conoce como función de transferencia del sistema. Multiplicando y dividiendo 
+la ecuación \eqref{eq:transferFunctionZ} por la variable $z$ elevada a la potencia menor cambiando el signo y aplicando el 
+Teorema fundamental de Álgebra al numerador y denominador se obtienen los <b>polos</b> (raices del denominador) y <b>ceros</b>
+(raices del numerador) 
+
+\begin{equation}
+H[z]=\frac{(z-z_1)(z-z_2)(z-z_3)\dots}{(z-p_1)(z-p_2)(z-p_3)\cdots}
+\end{equation}
+Tomando la Transformada $z$ de la \eqref{eq:generalSummation} se tiene: 
+
+
 
 
 </p>
