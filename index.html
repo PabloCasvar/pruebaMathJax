@@ -294,12 +294,127 @@ Teorema fundamental de Álgebra al numerador y denominador se obtienen los <b>po
 H[z]=\frac{(z-z_1)(z-z_2)(z-z_3)\dots}{(z-p_1)(z-p_2)(z-p_3)\cdots}
 \end{equation}
 Tomando la Transformada $z$ de la \eqref{eq:generalSummation} se tiene: 
+</p>
 
+<h1>Acústica</h1>
 
+<h2>Longitud de onda, frecuencia y velocidad del sonido</h2>
 
+<p>
+  La longitud de onda $\lambda$ se define como la distancia entre dos puntos consecutivos del campo sonoro que se hallan en el mismo
+  estado de vibración en cualquier instante. 
+
+  Considerando condiciones normales de $1$ atmósfera de presión y $22$ $°C$ de temperatura, la velocidad $v$ de propagación del sonido es de 
+  aproximadamente, $345$ $m/s$.
+
+  La relación entre las dos variables anteriores y la frecuencia $f$ de la onda está dada por: 
+
+  \begin{equation}
+    \lambda f = v
+  \end{equation}
 
 </p>
 
+<h2>Nivel de presión sonora (SPL)</h2>
+<p>
+  La presión sonora constituye la manera más habitul de expresar la magnitud de un campo sonoro. En principio, el valor a considerar es la diferencia 
+  entre el valor fluctuante de la presión sonota total $P_T$ y su valor de equilibrio $P_0$. Debido a la variación de dicha magnitud con el tiempo,
+  se utiliza como valor representativo su promedio temporal, que recibe el nombre de valor eficaz o $r.m.s$ (root mean square). <br><br>
+
+  Debido a la amplia gama de presiones sonoras a las que reponde el oido, que va desde $2\times 10^{-5}$ $Pa$ hasta el umbral de dolor a una presión eficaz de $100$ $Pa$ y 
+  que el sistema auditivo responde en forma logarítmica, se hace uso de una escala logarítmica para representar la presión sonora. esta escala se expresa en 
+  valores relativos a un valor de referencia, que corresponde al umbral de audución a 1 $kHz$, esta es, $P_{ref}=2\times 10^{-5}$ $Pa$. En tal caso se habla de nivel de presión 
+  sonora $SPL$ o $L_p$ en unidades de docibelios ($dB$). 
+
+  \begin{equation}
+    SPL = 20 log\frac{P_{ef}}{P_{ref}}
+  \end{equation}
+
+  Donde $P_{ef}$ es la presión eficaz del sonido en consideración. El uso de $dB$ reduce la dinámica de presiones sonoras de $1:5\times 10^6$ a niveles de presión sonora 
+  de 0 a 135 $dB$, donde 0 $dB$ representa una presión igual al umbral de audición (no significa ausencia de sonido) y 135 $dB$ el umbral aproximado de dolor.
+</p>
+
+<h2>Sonómetro</h2>
+<p>
+  El sonómetro es un aparato electrónico que permite medir sonidos bajo condiciones rigurosamente prefijadas, de manera que los resultados sean siempre objetivos y repetitivos, 
+  dentro de unos márgenes de tolerancia conocidos.
+</p>
+
+<h3>Escala lineal y red de ponderación A</h3>
+<p>
+  A la medida del nivel de presión sonora $SPL$ o $L_p$ utilizando la escala lineal no se le aplica ningún tipo de atenuación a ninguna de las frecuancias integrantes del sonido
+  objeto de análisis. <br><br>
+  Debido a la diferente sensibilidad del oído a las distintas frecuencias, los valores obtenidos haciendo uso de la escala lineal no guardan una relación directa con la 
+  sonoridad del sonido en cuestión. Con el objetivo de que la medida realizada sea más representativa de la sonoridad asociada a un sonido cualquiera, los sonómetros incorporan la 
+  llamada red de ponderación A. Como puede observarse el nivel a 1 $kHz$ queda inalterada, y por tanto puede considerarse de referencia.
+
+</p>
+
+<img src="img/ponderacion_A.png" style="max-width:425px; width:80%" alt="" />
+
+<p>
+  Los niveles de presión sonora medidos con la red de ponderación A se representan con las letras $L_A$ y se expresan en $dBA$ o $dB(A)$.
+</p>
+
+<h3>filtros para análisis frecuencial </h3>
+
+<p>En la mayoría de los casos es necesario disponer de una información más detallada de su espectro, es decir, de su contenido energético a distintas frecuencias.Con este objetivo 
+  existen sonómetros que incorporan un conjunto de filtros, generalmente con un ancho de banda de una octava. A continuación se muestran las frecuencias centrales de tales bandas según la norma ISO 266.
+</p>
+<table style="border: 1px solid black;">
+  <tr>
+    <td colspan="11">Frecuencias centrales de las bandas de octava estandarizadas (ISO 266)</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>31.5</td>
+    <td>63</td>
+    <td>125</td>
+    <td>250</td>
+    <td>500</td>
+    <td>1,000</td>
+    <td>2,000</td>
+    <td>4,000</td>
+    <td>8,000</td>
+    <td>16,000</td>
+  </tr>
+</table>
+
+<p>
+  Las 6 bandas de octava cuyas frecuencias centrales están comprendidas entre 125 $Hz$ y 4,000 $Hz$ son las que generalmente 
+  se cosideran tanto en la fase de diseño acústico como en la diagnosis acústica de recintos.
+</p>
+
+<h3>Sonómetro integrador</h3>
+<p>
+  el sonómetro integrador relaiza medidas del nivel de presión sonora obtenido como resultado de promediar linealmente la presión 
+  sonora cuadrática instantánea a lo largo del tiempode medida, dicha medida se denomina nivel continuo equivalentede presión sonora 
+  y se desigan por $L_{eq}$ <br><br>
+  Si las medidas hechas por este sonómetro utilizan la red de ponderación A la 
+  designacipon correcta sería $L_{Aeq}$.
+</p>
+
+<h3>Criterios de evaluaciónm del ruido de fondo en un recinto. Curvas NC</h3>
+<p>
+  La evaluación objetiva del grado de molestia que un determinado ruido ambiental provoca en un oyente se realiza por comparación de los niveles de ruido 
+  existentes en un recinto en cada banda de octava comprendida etre 63 $Hz$ y 8 $kHz$, con un conjunto de curvas denominadas NC (Noise Criteria). <br><br>
+
+  Se dice que un recinto cumple con una determinada especificación NC cuando los nivles de ruido de fondo, medidos en cada una de dichas bandas de octava, están 
+  por debajo de la curva NC correspondiente. 
+</p>
+
+<img src="img/curvas_nc.png" alt="" style="max-width: 450px;">
+
+<p>
+  Para verificar el cumplimiento de una determinada especificación NC, es necesario analizar el ruido de fondo presente en el recinto por bandas de octava. <br><br>
+  Se puede observar que a partir de la curva $NC-35$ el nivel $L_{A}$ está 10 $dB$ por encima del correspondiente valor NC. Por ejemplo, si el nivel de ruido de fondo existente en un recinto es de 50 $dBA$, 
+  ello significa que dicho recinto cumple la especificación NC-40. <br><br>
+
+  A continuación se muestran los niveles NC y sus equivalentes en $dBA$ recomendados para cierto recintos. 
+</p>
+<img src="img/nc_recintos.png" alt="" style="max-width: 600px">
+
+<h2></h2>
 
 </body>
 </html>
