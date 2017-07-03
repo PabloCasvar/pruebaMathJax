@@ -414,7 +414,104 @@ Tomando la Transformada $z$ de la \eqref{eq:generalSummation} se tiene:
 </p>
 <img src="img/nc_recintos.png" alt="" style="max-width: 600px">
 
-<h2></h2>
+<h2>Directividad del sonido</h2>
+
+<p>
+  En general cualquier fuente sonora radía más potencia en unas direcciones de que en otras y, por tanto, presenta una cierta directividad. Dicha directividad depende de la frecuencia y aumenta con la misma. <br><br>
+  La manera de expresar la directividad de una fuente sonora en un punto cualquiera en el espacio es mediante el denominado factor de directividad $Q$. el factor $Q$ depende de la relación entre el nivel de presión 
+  sonora producido por dicha fuente en la dirección considerada y el nivle que se obtendría si la fuente no fuese directiva. 
+</p>
+
+<h2>Propagación del sonido en el espacio libre</h2>
+<p>
+  Se considera una fuente omnidireccional como una fuente que radía energía de manera uniforme en todas las direcciones (factor de directividad $Q=1$), esto es, a una distancia cualquiera de la fuente, el nivel de presión SPL será
+  siempre el mismo con independencia de la dirección de propagación considerada. <br><br> 
+
+  en concreto, la disminucipon del nivel de presión sonora, para una fuente omnidireccional es de 6 $dB$ cada vez que se dobla la distancia a la fuente. <br><br>
+
+  Para que una fuente sonora radie de forma omnidireccional es necesario que sus dimensiones sean pequeñas con respecto a la longitud de onda del sonido emitido y que el receptor esté alejado de la misma. 
+</p>
+
+<h2>Sonido reflejado</h2>
+
+<p>
+  Se dice que una reflexión es de orden "n" cuando el rayo sonoro asociado ha incidido "n" veces sobre las diferentes superficies del recinto anted de llegar al receptor.
+  al anáilzar estas reflecciones se observan dos zonas, una que engloba las reflexiones que llegan inmediatamente después del sonido directo, y que reciben el nobre de primeras reflexiones o reflexiones tempranas y una segunda formada por las 
+  llamadas refelexiones tardías que constituyen la denominada cola reverberante.
+</p>
+
+<h2>Percepción subjetiva del eco</h2>
+
+<p>
+  Todas aquellas reflexiones que llegan al oyente dentro de los primeros 50 $ms$ desde la llegada del sonido directo son integradas por el oído humano, y en consecuencia su percepción no es diferenciada respecto al sonido directo. Estas reflexiones 
+  en un mensaje oral, contribuyen a mejorar la integibilidad o comprensión del mensaje y, al mismo tiempo, producen un aumento en la sonoridad. <br><br>
+  Por el contrario, la aparición en un punto de escucha una reflexión de nivel elevado con un retardo superior a los 50 $ms$ es totalmente contraproducente para la obtención de una buena inteligibilidad de la palabra. En tal caso dicha reflexión se denomina eco.
+</p>
+
+<h2>Tiempo de reverberación RT</h2>
+<p>
+  Se define el tiempo de reverberación ($RT$) a una frecuencia determinada como el tiempo (en segundos) que transcurre desde que el foco emisor se detiene hasta el momento en que el nivel de presión sonora SPL cae 60 $dB$ con respecto a su valor inicial. <br><br>
+  Un recinto con un RT grande se denomina "vivo", mientras que si el RT es pequeño recibe el nombre de recinto "apagado" o "sordo". <br><br>
+  Por lo general, el RT varía con la frecuencia, tendiendo a disminuir a medida que ésta aumenta. Ello es debido, en parte, a las características de mayor absorción con la frecuencia de los materiales comúnmente empleados como revestimientos, así como la absorción del aire, especialmente
+  manifiesta en recintos grandes y a altas frecuencias.
+</p>
+
+<h2>Modos propios de un sala </h2>
+
+<p>
+  La combinación de ondas incidentes y reflejadas en una sala da lugar a interferencias constructivas y destructivas o, lo que es lo mismo, a la aparición de las denominadas ondas estacionarias o modos propios de la sala. Los valores de las frecuencias propias 
+  asociadas a los diferentes modos propios dependen de la geometría y de las dimensiones del recinto y en general su determinación resulta muy compleja. Únicamente cuando se trata de recintos de forma paralelepípeda con superficies totalmente reflejantes, es posible 
+  calcularlo de forma sencilla mediante la fórmula de Rayleigh: 
+
+  \begin{equation}
+    f_{k, m, n} = 172.5 \sqrt{ \left (\frac{k}{L_x}  \right)^2 + \left (\frac{m}{L_y}  \right)^2 + \left (\frac{n}{L_z}  \right)^2}
+  \end{equation}
+
+  Partiendo de que la existencia de modos propios es inevitable, conviene elegir una relación entre las dimensiones de la sala tal que la disctribución de los mismos en el eje frecuencial sea lo más uniforme. Como ejemplo se presentan dos salas, una con relaciones 
+  óptimas ($6.25 \times 3.75 \times 2.5 m$) y otra de forma cúbica ($4 \times 4 \times 4m$)
+</p>
+
+<img src="img/modos_sala.png" alt="" style="max-width: 600px">
+
+<p>
+  En la siguiente figura se representa en la zona sombreada el conjunto de relaciones recomendadas entre la longitud y la anchura de una sala rectangular (suponiendo una altura normalizada de valor 1), con objeto de obtener uns distribución lo más uniforme posible de sus frecuencias propias.
+</p>
+
+<img src="img/dimensiones_recomendadas.png" alt="" style="max-width: 400px">
+
+<p>
+  Por otra parte, la densidad de modos propios aumenta con la frecuencia. Esto significa que a partir de cierta frecuencia, el concepto de coloración del sonido deja de tener sentido, ya que una gran densidad de modos propios es equivalente a la ausencia de éstos. La fórmula empírica que 
+  permite calcular, para cada sala, la frecuencia límite superior a partir de la cual los modos propios tienen una influencia prácticamente nula. 
+
+  \begin{equation}
+    f_{max} = 1849 \sqrt{ \frac{RT_{mid}}{V}}
+  \end{equation}
+
+  Donde $RT_{mid}$ es el valor del tiempo de reverberación obtenido como promedio de los valores correspondiente a las bandas de octava centradas en 500 $Hz$ y 1 $kHz$, expresado en segundos y $V$ es el volumen de la sala en $m^3$
+</p>
+
+<h2>Campo directo y campo reverbreante</h2>
+
+<p>
+  Aplicando la teoría de la acústica estadística, resulta que la energía sonora total presente en cualquier punto de una sala se obtiene como suma de una energía de valor variable, que depende de la ubicación de punto, y otra de valor constante. <br><br>
+  La energía de valor variable corresponde al sonido directo, y disminuye a medida que el receptor de aleja de la fuente, mientras que la energía de valor constante va a sociada al onido indirecto o reflejado. <br><br>
+  Habitualmente no se trabaja en términos de energía, sino de nivel de presión sonora SPL, lo cual es totalmente equivalente. Esto se debe a que, en la práctica, el nivel SPL es fácilmente medible. <br><br>
+  La zona donde predomina el sonido directo se denomina <b>zona de campo directo</b>. A dicha zona pertenecen los puntos más próximos a la fuente sonora y en ella el nivel de presión sonora, llamado nivel de campo directo $L_D$, disminuye 6 $dB$ cada vez que se dobla la distancia a la fuente, como si el receptor estuviese situado en el espacio libre. <br><br>
+  La zona donde predomina el sonido reflejado recibe el nombre de <b>zona de campo reverberante</b>.  A ella pertenecen los puntos más alejados de la fuente sonora. En esta zona, el nivel de presión sonora, denominado nivle de campo reverberante $L_R$ se mantien constante. <br><br>
+  La distancia para la cual $L_D=L_R$ se denomina distancia crítica $D_c$. Se puede demostrar que 
+
+  \begin{equation}
+    D_c = 0.14 \sqrt{QR}
+  \end{equation}
+
+  Donde $Q$ es el factor de directividad de la fuente sonora en la dirección considerada y $R$ es la constante de la sala dada por 
+  
+  \begin{equation}
+    R = \frac{S_t \bar{\alpha}}{1-\bar{\alpha}}
+  \end{equation}
+
+  Donde $S_t$ es la superficie total de la sala y $\bar{\alpha}$ es el coeficiente medio de absorción de la sala
+</p>
 
 </body>
 </html>
