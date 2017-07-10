@@ -464,13 +464,34 @@ Tomando la Transformada $z$ de la \eqref{eq:generalSummation} se tiene:
     RT = 0.161 \frac{V}{A_{tot}}
   \end{equation}
 
-  Donde $V$ es el volumen del recinto en $m^3$ y $A_{tot}$ es la absorción total del recinto definida a continuación. <br><br>
+  Donde $V$ es el volumen del recinto en $m^3$ y $A_{tot}$ es la absorción total del recinto definida como la suma de todas y cada una de las absorciones individuales, es decir. 
+
+  \begin{equation}
+    A_{tot} = \alpha _1S_1 + \alpha _2S_2 + ... \alpha_nS_n
+  \end{equation}
 
   El grado de absorción del sonido de un material cualquiera se representa mediante el llamado coeficiente de absorción $\alpha$. Se define como la relación entre la energía absorbida por dicho material y la energía incidente sobre el mismo. 
 
- \begin{equation}
-    RT = 0.161 \frac{Energia_absorbida}{Energia_incidente}
+  \begin{equation}
+    \alpha = 0.161 \frac{Energia_absorbida}{Energia_incidente}
   \end{equation}
+
+  De acuerdo a la norma ISO 354 ell coeficiente de absorción de un material $\alpha _s$ de un plano de absorción se alcula como 
+
+  \begin{equation}
+    \alpha _s = \frac{A_T}{S}
+  \end{equation}
+
+  Donde $S$ es el área, en metros cuadrados, cubierta por el especimen y $A_T$ es el equivalente de área de absorsión de sonido, en metros cuadrados, dada por 
+
+  \begin{equation}
+    A_T = 55.3 V \left( \frac{1}{c_2T_2} - \frac{1}{c_1T_1} \right) - 4V(m_1 - m_2)
+  \end{equation}
+
+  Donde $c_1$ y $c_2$ son las velocidades de propagación del sonido a la temperatura $t_1$ y $t_2$ respetivamente <br><br>
+  $V$ es el volumen de la cámara reverberante <br><br>
+  $T_2$ y $T_1$ son los tiempos de reverberación con y sin el material absorvente <br><br>
+  $m_2$ y $m_1$ son los coeficientes de aenuación de poder, en metros recíprocos, calculados de acuerdo a la norma ISO 9613-1, mismos que dependen de la frecuencia, humedad relativa , temperatura y presión.
 
 </p>
 
@@ -532,7 +553,7 @@ Tomando la Transformada $z$ de la \eqref{eq:generalSummation} se tiene:
 
   \begin{equation}
     f_{max} = 1849 \sqrt{ \frac{RT_{mid}}{V}}
-  \end{equation
+  \end{equation}
 </p>
 
 </body>
