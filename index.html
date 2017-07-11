@@ -556,5 +556,47 @@ Tomando la Transformada $z$ de la \eqref{eq:generalSummation} se tiene:
   \end{equation}
 </p>
 
+<h1>Redes Neuronales</h1>
+
+<h2>Vector gradiente</h2>
+
+<p>
+  El vector gradiente de una función $f(x, y, z)$ se define como
+
+  \begin{equation}
+    \nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right)
+  \end{equation}
+
+  El gradiente es un vector que apunta en la dirección de máximo incremento de una función y toma el valor de cero en un máximo y mínimo local.
+</p>
+
+<h2>Algoritmo de entrenamiento del perceptrón</h2>
+
+<p>
+  Sea $y$ la salida del perceptrón dada por 
+
+  \begin{equation}
+    y= f \left( \sum_{i=0}^{n} w_ix_i \right)
+  \end{equation}
+
+  O bien definiendo los vectores $\vec{w} = (w_0, w_1, ... w_n)$ y $\vec{x} = (x_0, x_1, ..., x_n)$ con $x_0 = 1$ se tiene 
+
+  \begin{equation}
+    y= f \left( \vec{w} \cdot \vec{x} \right)
+  \end{equation}
+
+  siendo $f$ la función límite duro. Por otro lado sea la función de error $E$ dada por 
+
+  \begin{equation}
+    E = d - y  
+  \end{equation}
+
+  con $d$ el valor deseado a la salida, se define la ganancia $\eta $ delimitada por $0 \lt \eta \lt 1$ y sea $t$ el contador de la iteración, se da la ecuación de entrenamiento como 
+
+  \begin{equation} 
+    \vec{w_j}(t+1) = \vec{w_j}(t) + \eta (d-y)\vec{x}
+  \end{equation}
+</p>
+
 </body>
 </html>
