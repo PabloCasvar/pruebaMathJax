@@ -598,5 +598,102 @@ Tomando la Transformada $z$ de la \eqref{eq:generalSummation} se tiene:
   \end{equation}
 </p>
 
+<h1>Igualdade útiles</h1>
+
+<h2>Suma y diferencia de ángulos</h2>
+
+<p>
+  \begin{equation}
+    sen(a\pm b) = sen(a) cos(b) \pm sen(b) cos(a)
+  \end{equation}
+  \begin{equation}
+    cos(a \pm b) = cos(a) cos(b) \mp sen(a) sen(b)
+  \end{equation}
+  \begin{equation}
+    tan(a \pm b) = \frac{tan(a) \pm tan(b)}{1 \mp tan(a)tan(b)}
+  \end{equation}
+</p>
+
+<h2>Identidad de Euler</h2>
+
+Sea $j$ la constante imaginaria tal que $j^2 = -1$ y las funciones $Re(\bullet )$ y $Im(\bullet )$ las funciones parte real y parte imaginaria respectivamente
+
+<p>
+  \begin{equation}
+    e^{jx} = cos(x) + j \phantom 0sin(x)
+  \end{equation}
+  \begin{equation}
+    cos(x) = Re(e^{jx})
+  \end{equation}
+  \begin{equation}
+    sin(x) = Im(e^{jx})
+  \end{equation}
+
+  \begin{equation}
+    |e^{j\theta }| = \sqrt{cos^2(\theta )+sin^2(\theta )} = 1
+  \end{equation}
+  
+  \begin{equation}
+    e^{j\theta} = 1 \angle \theta
+  \end{equation}
+
+  \begin{equation}
+    e^{j\pi} + 1 = 0 
+  \end{equation}
+</p>
+
+
+<h1>Fasores</h1>
+
+<p>
+Sea una señal $v(t)$ dada por 
+
+\begin{equation}
+  v(t) = Acos(2 \pi ft + \phi) = Acos(\omega t + \phi)
+\end{equation}
+
+Donde $A$ es la amplitud, $f$ la frecuencia, $\phi$ la fase y $\omega = 2\pi f$ la frecuencia angular. <br><br> 
+Tomando la igualdad $cos(\theta) = Re(e^{j\theta})$ se puede reescribir $v(t)$ como 
+
+\begin{equation}
+  v(t) = Re(A e^{j(\omega t + \phi)}) = Re(A e^{j\phi} e^{j\omega t} )
+\end{equation}
+
+Se define el fasor $V$ como 
+
+\begin{equation}
+  V = A e^{j\phi}
+\end{equation}
+
+Usando el fasor se puede representar una señal sinusoidal dada eliminando la naturaleza variable de la misma, esto es, eliminando la variable $t$. Cabe destacar que se da por sentado que se conoce la frecuencia $f$ de la señal. <br><br>
+Haciendo uso de la identidad de Euler $e^{j\theta} = cos(\theta) + j \phantom 0sin(\theta)$ el fasor $V$ puede reescribirse como 
+
+\begin{align*}
+  V &= A [cos(\phi) + j \phantom 0sin(\phi)] \\ \\
+    &= A cos(\phi) + j \phantom 0Asin(\phi)  \\ \\ 
+    &= X + j \phantom 0Y
+\end{align*}
+
+Donde se definen $X=Acos(\phi)$ y $Y=Asin(\phi)$. De esta manera el fasor $V$ puede graficarse en el plano complejo con una magnitud de $A$ y un ángulo respecto al eje real de $\phi$
+<br><br>
+Regresando a la definición de la señal $v(t)$ y haciendo uso de la identidad $cos(a \pm b) = cos(a) cos(b) \mp sen(a) sen(b)$ se tiene
+
+\begin{align*}
+  v(t) &= Acos(\omega t + \phi) \\ \\ 
+  &= A [cos(\phi) cos(\omega t) - sin(\phi) sin(\omega t)] \\ \\
+  &=A cos(\phi) cos(\omega t) - Asin(\phi) sin(\omega t) \\ \\
+   &= Xcos(\omega t) - Ysin(\omega t)
+\end{align*}
+
+
+
+\begin{equation}
+  
+\end{equation}
+
+ $$
+
+</p>
+
 </body>
 </html>
